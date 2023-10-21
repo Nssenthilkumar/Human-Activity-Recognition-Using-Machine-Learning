@@ -1,0 +1,104 @@
+<html>
+<title>ML API</title>
+<style>
+body {
+margin:0px;
+padding:0px;
+}
+table,tr,td,th {
+margin-left:20px;
+}
+#b2 {
+font-size:20px;
+
+}
+h1 {
+letter-spacing:2px;
+margin-top:35px;
+font-family:Berlin Sans FB;
+font-weight:normal;
+}
+.btn{
+height:40px; 
+width:90px;
+border-radius:5px;
+border-color:white;
+}
+#b4
+{
+height:40px; 
+width:90px;
+border-radius:5px;
+border-color:white;
+}
+</style>
+</head>
+<body bgcolor="pink">
+ <div class="login">
+	<center><h1 id="b1">Human Activity Using Machine Learning</h1></center><br>
+	
+	<table cellpadding="7px">
+    <form action="{{ url_for('predict')}}"method="post">
+	<tr><th id="b2">TBodyAcc-mean()-X </th><th>
+    	<input type="text" name="tBodyAcc-mean()-X" required="required" size="25px" style="height:30px; border-radius:5px;"/></th></tr>
+		
+		<tr><th id="b2">TBodyAcc-mean()-Y : </th><th>
+        <input type="text" name="tBodyAcc-mean()-Y"  required="required" size="25px" style="height:30px; border-radius:5px;"/></th></tr>
+		
+		<tr><th id="b2">TBodyAcc-mean()-Z : </th><th>
+		<input type="text" name="tBodyAcc-mean()-Z" required="required" size="25px" style="height:30px; border-radius:5px;"/></th></tr>
+		
+		<tr><th id="b2">TBodyAcc-std()-X : </th><th>
+		<input type="text" name="tBodyAcc-std()-X" required="required" size="25px" style="height:30px; border-radius:5px;"/></th></tr>
+		
+		<tr><th id="b2">TBodyAcc-std()-Y : </th><th>
+		<input type="text" name="tBodyAcc-std()-Y" required="required" size="25px" style="height:30px; border-radius:5px;"/></th></tr>
+		
+		<tr><th id="b2">TBodyAcc-std()-Z : </th><th>
+        <input type="text" name="tBodyAcc-std()-Z" required="required"size="25px" style="height:30px; border-radius:5px;" /></th></tr>
+		
+		<tr><th id="b2">TBodyAcc-mad()-X : </th><th>
+		<input type="text" name="tBodyAcc-mad()-X" required="required" size="25px" style="height:30px; border-radius:5px;"/></th></tr>
+		
+		<tr><th id="b2">TBodyAcc-mad()-Y : </th><th>
+		<input type="text" name="tBodyAcc-mad()-Y" required="required" size="25px" style="height:30px; border-radius:5px;"/></th></tr>
+		
+		<tr><th id="b2">TBodyAcc-mad()-Z : </th><th>
+		<input type="text" name="tBodyAcc-mad()-Z" required="required" size="25px" style="height:30px; border-radius:5px;"/></th></tr>
+		
+		<tr><th id="b2">TBodyAcc-max()-X : </th><th>
+        <input type="text" name="tBodyAcc-max()-X" required="required" size="25px" style="height:30px; border-radius:5px;" /></th></tr>
+		
+		<tr><th id="b2">TBodyAcc-max()-Y : </th><th>
+		<input type="text" name="tBodyAcc-max()-Y"  required="required" size="25px" style="height:30px; border-radius:5px;"/></th></tr>
+		
+		<tr><th id="b2">TBodyAcc-max()-Z : </th><th>
+		<input type="text" name="tBodyAcc-max()-Z"  required="required" size="25px" style="height:30px; border-radius:5px;"/></th></tr>
+		
+		<tr><th id="b2">TBodyAcc-min()-X : </th><th>
+		<input type="text" name="tBodyAcc-min()-X"  required="required" size="25px" style="height:30px; border-radius:5px;"/></th></tr>
+		
+		<tr><th id="b2">TBodyAcc-min()-Y : </th><th>
+		<input type="text" name="tBodyAcc-min()-Y" required="required" size="25px" style="height:30px; border-radius:5px;"/></th></tr>
+		
+		<tr><th id="b2">TBodyAcc-min()-Z : </th><th>
+		<input type="text" name="tBodyAcc-min()-Z" required="required" size="25px" style="height:30px; border-radius:5px;"/></th></tr>
+		
+		<tr><th align="left" id="b2">Subject: </th><th>
+		<input type="text" name="subject" required="required" size="25px" style="height:30px; border-radius:5px;"/></th></tr>
+		<tr></td>
+		<tr></td>
+		<tr ><td colspan=2><center>
+        <button type="submit" class="btn btn-primary btn-block btn-large" style="cursor:pointer;">Predict</button>&nbsp;&nbsp;
+<input type="reset" style="cursor:pointer;" id="b4"></center></td></tr>
+    </form>
+</table>
+   <br>
+   <h3>The Activity is : 
+   {{ prediction_text }}
+</h3>
+  
+
+ </div>
+</body>
+</html>
